@@ -6,28 +6,29 @@
 1) Register on mongodb.com and create Shared Claster. 
 2) Create a user for database (userName & password)
 3) IP Access List - add 0.0.0.0
-4) Click "Connect" button and select "Connetct your application"
+4) Click "Connect" button and select "Connect your application"
 5) Copy claster info from connection string. By default - "claster0.xxxxxx"
 
 ## Downloading
 
 ```bash
 git clone {repository URL}
-cd back-manager-app
 ```
 
 ## Connect to your DataBase on MongoDB
-- open src/index.ts. In mongoose.connect method replace ${} by userName, Password and ClasterInfo from Prerequisites
+- open final-task-backend/Project management application/src/index.ts. In mongoose.connect method add userName, userPassword, clasterInfo from Prerequisites
+- create commit and push it
 
-## Run Xeroku
-Run commands
-
-```bash
-git switch source
-heroku create --region eu
-heroku git:remote -a <YOUR_APP_NAME>
-git push heroku source:master
-```
+## Deploy  on the railway.app
+- open https://railway.app/
+- create New Project -> Deploy from GitHub repo -> login with GitHub
+- Repository access -> Only select repositories -> final-task-backend -> Save
+- Select repository 'final-task-backend'
+- First try of deploy will fail. Settings -> General -> Root Directory: 'Project management application'
+- Deployments -> button ... on failed one -> Redeploy
+- Wait for success build
+- Settings -> Environment -> Generate Domain
+- use domain/api-docs for access to Swagger documentations.
 
 # REST service docs
 
